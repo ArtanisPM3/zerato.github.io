@@ -795,32 +795,6 @@ function escapeHtml(str) {
   });
 }
 
-const navbar = document.getElementById("navbar");
-window.addEventListener("scroll", () => {
-  navbar.classList.toggle("scrolled", window.scrollY > 10);
-});
-
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-  hamburger.classList.toggle("open");
-});
-
-document.addEventListener("click", (e) => {
-  if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-    navLinks.classList.remove("show");
-    hamburger.classList.remove("open");
-  }
-});
-
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-    hamburger.classList.remove("open");
-  });
-});
-
 const THEME_KEY = "theme";
 const themeToggle = document.getElementById("toggle-theme");
 
